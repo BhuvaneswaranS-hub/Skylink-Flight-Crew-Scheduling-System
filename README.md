@@ -1,4 +1,4 @@
-# ✈️ SkyLink – Flight Crew Scheduling System
+﻿# ✈️ SkyLink – Flight Crew Scheduling System
 
 SkyLink is a Java-based desktop application designed to simplify and automate airline crew scheduling and flight operations.
 
@@ -183,14 +183,19 @@ util/DatabaseConnection.java
 
 Configure the MySQL connection according to your local environment.
 
-Make sure that:
+Set these environment variables before starting the application:
 
-- MySQL Server is running.
-- The database has been created using `schema.sql`.
-- The JDBC connection URL points to the correct database.
-- Your local database connection settings are configured properly.
+- `SKYLINK_DB_URL` (optional; defaults to `jdbc:mysql://localhost:3306/crew_management`)
+- `SKYLINK_DB_USER`
+- `SKYLINK_DB_PASSWORD`
 
-**Note:** Database connection details should be configured locally and must not be exposed in the public GitHub repository.
+Keep your credentials local and do not commit them to the repository. In PowerShell, for example:
+
+```powershell
+$env:SKYLINK_DB_USER = "root"
+$env:SKYLINK_DB_PASSWORD = "your-local-password"
+./run.ps1
+```
 
 ### Step 4: Compile the Project
 
@@ -384,3 +389,4 @@ No license has currently been specified for this project. A suitable open-source
 Built with Java, Swing, JDBC, and MySQL.
 
 </div>
+
